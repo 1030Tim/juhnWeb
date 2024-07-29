@@ -66,13 +66,23 @@
     
     <section id="home" class="section">
         <h1>歡迎來到我的個人網站</h1>
-        <p>這裡是我的個人網站，展示我的興趣<br>一名來自屏東的高中生。</p>
-        <div class="timer" id="age-timer">17.0000000000</div><a>歲</a>
+        <p>這裡是我的個人網站，展示我的興趣
+            一名來自屏東的高中生。
+        </p>
+        <div class="timer" id="age-timer">17.4000000000</div><a>歲</a>
     </section>
     
     <section id="about" class="section">
         <h2>關於我</h2>
-        <p>你好，我是一笑傾城，一名高中生。我對 coding 有濃厚的興趣。</p>
+        <p>你好，我是一笑傾城，一名高中生。<br>
+            我對 coding 有濃厚的興趣。<br>
+            就讀屏東陸興高中<br>
+            我是一名體育選手<br>
+            專項為撐竿跳高<br>
+            同時也是喜歡coding<br>
+            打傳說<br>
+            看賽馬娘的宅男
+        </p>
     </section>
     
     <section id="projects" class="section">
@@ -107,10 +117,9 @@
                 }
             </p>
         </div>
-        <!-- 你可以繼續添加更多項目 -->
     </section>
     
-    <section id="contact" class="section">
+    <section id="contact" class="section-down">
         <h2>聯繫我</h2>
         <p>如果你有任何問題或合作機會，請通過以下方式聯繫我：</p>
         <ul>
@@ -118,24 +127,34 @@
             <li>LinkedIn: <a href="https://www.linkedin.com/in/juhn-2959b331b" target="_blank">LinkedIn</a></li>
             <li>GitHub: <a href="https://github.com/yourusername" target="_blank">你的 GitHub</a></li>
         </ul>
+        <br>沒有更多了
+        <br>
+        <br>
+        <br>
+        <br>
+        
     </section>
-    
-    <footer>
+        <div class="end">
+        <footer>
         <p>&copy; 2024 陳閔駿. 保留所有權利。</p>
-    </footer>
+        </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const timerElement = document.getElementById('age-timer');
             const increment = 0.0000000001;
             const updateInterval = 10; // Update every 10 milliseconds
-    
+
+            // 重置本地存儲中的年齡數據
+            localStorage.removeItem('age');
+
             // 初始化年齡，從本地存儲中讀取或設置為17
             let age = parseFloat(localStorage.getItem('age')) || 17.4000000000;
-    
+
             // 更新頁面上的年齡顯示
             timerElement.textContent = age.toFixed(10);
-    
+
             setInterval(() => {
                 age += increment;
                 timerElement.textContent = age.toFixed(10);
