@@ -127,13 +127,20 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const timerElement = document.getElementById('age-timer');
-            let age = 17.0000000000;
             const increment = 0.0000000001;
-            const updateInterval = 0.01; // Update every 100 milliseconds
-
+            const updateInterval = 10; // Update every 10 milliseconds
+    
+            // 初始化年齡，從本地存儲中讀取或設置為17
+            let age = parseFloat(localStorage.getItem('age')) || 17.0000000000;
+    
+            // 更新頁面上的年齡顯示
+            timerElement.textContent = age.toFixed(10);
+    
             setInterval(() => {
                 age += increment;
                 timerElement.textContent = age.toFixed(10);
+                // 將當前年齡保存到本地存儲
+                localStorage.setItem('age', age);
             }, updateInterval);
         });
     </script>
